@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/generate"
+  to = "/.netlify/functions/generate"
+  status = 200
+
+# Handle static pages first, then fallback to index.html for SPA routes
+[[redirects]]
+from = "/users"
+to = "/users/index.html"
+status = 200
+
+[[redirects]]
+from = "/roasts"
+to = "/roasts/index.html"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
