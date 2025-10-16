@@ -41,7 +41,7 @@ export default function ComedyGenerator({ onBack, adultContentVerified }: Comedy
     setCurrentRiddle(null)
 
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

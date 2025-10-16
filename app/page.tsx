@@ -732,7 +732,7 @@ export default function Home() {
     const prompt = `Generate a playful roast about: ${customPrompt}. Make it funny but not mean-spirited.`
     
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -782,7 +782,7 @@ export default function Home() {
     const prompt = `Generate clever puns about: ${customPrompt}. Make them groan-worthy and creative.`
     
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -821,7 +821,7 @@ export default function Home() {
     const prompt = `Generate a funny joke story about ${randomStoryPrompt}. Follow the classic structure with setup, misdirection, and a satisfying twist. Write EXACTLY 1 paragraph with 4-6 sentences. ONE clear twist, no multiple punchlines, no puns. Keep it concise and captivating.`
     
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -857,7 +857,7 @@ export default function Home() {
     const prompt = 'Generate a playful roast about a random topic. Make it funny but not mean-spirited.'
     
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -892,7 +892,7 @@ export default function Home() {
     const prompt = 'Generate clever puns about a random topic. Make them groan-worthy and creative.'
     
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -973,7 +973,7 @@ Format: RIDDLE: [riddle text] ANSWER: [answer]`
       const category = 'short-riddles'
       
       try {
-        const response = await fetch('/api/generate', {
+        const response = await fetch('/.netlify/functions/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -993,7 +993,7 @@ Format: RIDDLE: [riddle text] ANSWER: [answer]`
             riddles.push(data.content)
           } else {
             // Try again with a different approach
-            const retryResponse = await fetch('/api/generate', {
+            const retryResponse = await fetch('/.netlify/functions/generate', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
