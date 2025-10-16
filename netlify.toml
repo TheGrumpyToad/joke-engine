@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Force function detection
+# Force function detection - updated
 [functions]
   directory = "netlify/functions"
 
