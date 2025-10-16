@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Force function detection
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/api/generate"
   to = "/.netlify/functions/generate"
