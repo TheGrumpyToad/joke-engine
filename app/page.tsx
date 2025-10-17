@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { AuthButton } from '@/components/AuthButton'
 import { useAuth } from '@/contexts/AuthContext'
 import { saveUserQuestion } from '@/lib/userQuestions'
+import { callGenerateAPI } from '@/lib/api'
 
 // Function to get random story prompt
 function getRandomStoryPrompt(): string {
@@ -732,18 +733,7 @@ export default function Home() {
     const prompt = `Generate a playful roast about: ${customPrompt}. Make it funny but not mean-spirited.`
     
     try {
-      const response = await fetch('/.netlify/functions/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          category: 'roasts',
-          prompt: prompt
-        })
-      })
-      
-      const data = await response.json()
+      const data = await callGenerateAPI('roasts', prompt)
       
       if (data.success) {
         setRoastContent(data.content)
@@ -782,18 +772,7 @@ export default function Home() {
     const prompt = `Generate clever puns about: ${customPrompt}. Make them groan-worthy and creative.`
     
     try {
-      const response = await fetch('/.netlify/functions/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          category: 'puns',
-          prompt: prompt
-        })
-      })
-      
-      const data = await response.json()
+      const data = await callGenerateAPI('puns', prompt)
       
       if (data.success) {
         setRoastContent(data.content)
@@ -821,18 +800,7 @@ export default function Home() {
     const prompt = `Generate a funny joke story about ${randomStoryPrompt}. Follow the classic structure with setup, misdirection, and a satisfying twist. Write EXACTLY 1 paragraph with 4-6 sentences. ONE clear twist, no multiple punchlines, no puns. Keep it concise and captivating.`
     
     try {
-      const response = await fetch('/.netlify/functions/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          category: 'stories',
-          prompt: prompt
-        })
-      })
-      
-      const data = await response.json()
+      const data = await callGenerateAPI('stories', prompt)
       
       if (data.success) {
         setRoastContent(data.content)
@@ -857,18 +825,7 @@ export default function Home() {
     const prompt = 'Generate a playful roast about a random topic. Make it funny but not mean-spirited.'
     
     try {
-      const response = await fetch('/.netlify/functions/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          category: 'roasts',
-          prompt: prompt
-        })
-      })
-      
-      const data = await response.json()
+      const data = await callGenerateAPI('roasts', prompt)
       
       if (data.success) {
         setRoastContent(data.content)
@@ -892,18 +849,7 @@ export default function Home() {
     const prompt = 'Generate clever puns about a random topic. Make them groan-worthy and creative.'
     
     try {
-      const response = await fetch('/.netlify/functions/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          category: 'puns',
-          prompt: prompt
-        })
-      })
-      
-      const data = await response.json()
+      const data = await callGenerateAPI('puns', prompt)
       
       if (data.success) {
         setRoastContent(data.content)
@@ -973,18 +919,7 @@ Format: RIDDLE: [riddle text] ANSWER: [answer]`
       const category = 'short-riddles'
       
       try {
-        const response = await fetch('/.netlify/functions/generate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            category: category,
-            prompt: prompt
-          })
-        })
-        
-        const data = await response.json()
+        const data = await callGenerateAPI(category, prompt)
         
         if (data.success) {
           // Check if the riddle is good quality
@@ -993,17 +928,7 @@ Format: RIDDLE: [riddle text] ANSWER: [answer]`
             riddles.push(data.content)
           } else {
             // Try again with a different approach
-            const retryResponse = await fetch('/.netlify/functions/generate', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                category: 'short-riddles',
-                prompt: `Generate 1 clever riddle about ${randomPrompt}. Use wordplay or logic. Must be unexpected but logical. Examples: "What has hands and a face, but can't smile or clap?" → "A clock". "What gets wetter the more it dries?" → "A towel". Format: RIDDLE: [riddle] ANSWER: [answer]`
-              })
-            })
-            const retryData = await retryResponse.json()
+            const retryData = await callGenerateAPI('short-riddles', `Generate 1 clever riddle about ${randomPrompt}. Use wordplay or logic. Must be unexpected but logical. Examples: "What has hands and a face, but can't smile or clap?" → "A clock". "What gets wetter the more it dries?" → "A towel". Format: RIDDLE: [riddle] ANSWER: [answer]`)
             if (retryData.success) {
               riddles.push(retryData.content)
             } else {
