@@ -14,6 +14,35 @@
   to = "/.netlify/functions/generate"
   status = 200
 
+# Redirect www and http to https://joke-engine.com
+[[redirects]]
+from = "http://www.joke-engine.com/*"
+to = "https://joke-engine.com/:splat"
+status = 301
+
+[[redirects]]
+from = "https://www.joke-engine.com/*"
+to = "https://joke-engine.com/:splat"
+status = 301
+
+[[redirects]]
+from = "http://joke-engine.com/*"
+to = "https://joke-engine.com/:splat"
+status = 301
+
+# Handle static files first - must come before catch-all
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap.xml"
+status = 200
+force = true
+
+[[redirects]]
+from = "/robots.txt"
+to = "/robots.txt"
+status = 200
+force = true
+
 # Handle static pages first, then fallback to index.html for SPA routes
 [[redirects]]
 from = "/users"
@@ -25,6 +54,12 @@ from = "/roasts"
 to = "/roasts/index.html"
 status = 200
 
+[[redirects]]
+from = "/about"
+to = "/about/index.html"
+status = 200
+
+# Catch-all redirect - must be last
 [[redirects]]
 from = "/*"
 to = "/index.html"
