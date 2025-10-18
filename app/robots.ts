@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://your-domain.com/sitemap.xml',
+    sitemap: 'https://joke-engine.com/sitemap.xml',
   }
 }

@@ -5,6 +5,7 @@ import { AuthProvider } from '@/contexts/AuthContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://joke-engine.com'),
   title: 'Joke Engine - AI Comedy Generator | Roasts, Puns, Riddles & Stories',
   description: 'Free AI-powered joke generator creating hilarious roasts, clever puns, brain teasers, and funny stories. Instant comedy content with Google sign-in. No registration required.',
   keywords: 'joke generator, AI comedy, roasts generator, puns generator, riddles generator, funny stories, comedy AI, humor generator, joke maker, comedy content',
@@ -15,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Joke Engine - AI Comedy Generator | Roasts, Puns, Riddles & Stories',
     description: 'Free AI-powered joke generator creating hilarious roasts, clever puns, brain teasers, and funny stories. Instant comedy content.',
-    url: 'https://your-domain.com',
+    url: 'https://joke-engine.com',
     siteName: 'Joke Engine',
     images: [
       {
@@ -35,7 +36,7 @@ export const metadata = {
     images: ['/twitter-image.jpg'],
   },
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://joke-engine.com',
   },
 }
 
@@ -49,7 +50,7 @@ export default function RootLayout({
     "@type": "WebApplication",
     "name": "Joke Engine",
     "description": "Free AI-powered joke generator creating hilarious roasts, clever puns, brain teasers, and funny stories",
-    "url": "https://your-domain.com",
+    "url": "https://joke-engine.com",
     "applicationCategory": "Entertainment",
     "operatingSystem": "Web Browser",
     "offers": {

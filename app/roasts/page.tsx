@@ -56,7 +56,7 @@ export default function RoastsPage() {
         <meta name="keywords" content="roast generator, AI roasts, comedy roasts, witty burns, playful insults, roast jokes, comedy generator" />
         <meta property="og:title" content="Roast Generator - AI Comedy Roasts | Joke Engine" />
         <meta property="og:description" content="Generate hilarious AI-powered roasts instantly. Free roast generator creating witty burns and playful insults." />
-        <meta property="og:url" content="https://your-domain.com/roasts" />
+        <meta property="og:url" content="https://joke-engine.com/roasts" />
         <meta name="twitter:title" content="Roast Generator - AI Comedy Roasts" />
         <meta name="twitter:description" content="Generate hilarious AI-powered roasts instantly. Free roast generator creating witty burns and playful insults." />
       </Head>
