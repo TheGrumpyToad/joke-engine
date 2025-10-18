@@ -1,5 +1,3 @@
-const { NextRequest, NextResponse } = require('next/server');
-
 exports.handler = async (event, context) => {
   try {
     const { category, prompt } = JSON.parse(event.body || '{}');
