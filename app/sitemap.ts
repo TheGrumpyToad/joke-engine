@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 
+// Updated: 2025-10-18 - Force fresh sitemap generation
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://joke-engine.com'
   
