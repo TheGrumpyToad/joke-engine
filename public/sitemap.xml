@@ -6,24 +6,24 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://your-domain.com/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://joke-engine.com/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Roasts Page -->
   <url>
-    <loc>https://your-domain.com/roasts</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://joke-engine.com/roasts</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Users Page -->
   <url>
-    <loc>https://your-domain.com/users</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://joke-engine.com/users</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
